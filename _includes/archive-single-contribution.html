@@ -1,0 +1,26 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+
+    {% if post.title %} {{ post.title }} {% endif %}<br>
+    {% if post.type %} <small><b>[{{ post.type }}]</b> @</small> {% endif %}
+    {% if post.venue %} <small><i>{{ post.venue }}</i></small> {% endif %}
+    {% if post.link %} <a href="{{ post.link }}" class="btn btn--info btn--medium" target="_blank">Program booklet</a> {% endif %}<br>
+
+    {% if post.date %} <i class="fa fa-calendar-days"></i> <small>{{ post.date | date: '%B %d, %Y' }}</small> {% endif %}
+    {% if post.location %} <i class="fa-solid fa-location-dot" aria-hidden="true"></i> <small>{{post.location}}</small> {% endif %}<br><br>
+  </article>
+</div>
