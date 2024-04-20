@@ -73,10 +73,13 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+
+      // background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+      background-image: linear-gradient(to left, indigo, green, orange, red);   -webkit-background-clip: text;
+      color: transparent;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
