@@ -90,12 +90,12 @@
   }
 
   img {
-    max-width: 175px;
+    max-width: 200px;
     border-radius: 50%;
 
     @include breakpoint($large) {
       padding: 5px;
-      border: 1px solid $border-color;
+      border: 2px dashed $border-color;
     }
   }
 }
@@ -254,7 +254,9 @@
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: underline overline;
+      text-underline-offset: 3px;
+      text-overline-offset: 1px;
     }
   }
 }
